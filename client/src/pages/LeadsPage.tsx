@@ -197,7 +197,7 @@ const LeadsPage = () => {
 
         {/* Statistics Cards */}
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5 mb-8">
-          {statCards.map((stat, index) => {
+          {statCards.map((stat) => {
             const Icon = stat.icon;
             const colorClasses = {
               blue: "bg-blue-50 text-blue-600",
