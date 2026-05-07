@@ -8,7 +8,7 @@ The system allows authenticated users to create, update, delete, and manage lead
 
 # Project Overview
 
-This application was developed as a Full-Stack CRM Take-Home Assessment using the MERN stack.
+This application was developed as a Full-Stack CRM using the MERN stack.
 
 The project demonstrates:
 
@@ -374,17 +374,6 @@ JWT_EXPIRES_IN=
 VITE_API_BASE_URL=
 ```
 
----
-
-# Known Limitations
-
-* Authentication currently uses a hardcoded test user.
-* No user registration functionality.
-* No email notification integration.
-* No file upload support.
-* Minimal role-based access control.
-
----
 
 # Reflection
 
