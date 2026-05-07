@@ -1,82 +1,303 @@
-# LeadFlow CRM - Full Stack Lead Management
+# LeadFlow CRM - Full Stack Lead Management System
 
-## Project Structure
+LeadFlow CRM is a full-stack Customer Relationship Management (CRM) application designed for small sales teams to manage leads, track sales pipelines, monitor deal progress, and organize customer interactions efficiently.
 
-```
+The system allows authenticated users to create, update, delete, and manage leads while tracking lead statuses, deal values, and notes through a modern dashboard interface.
+
+---
+
+# Project Overview
+
+This application was developed as a Full-Stack CRM Take-Home Assessment using the MERN stack.
+
+The project demonstrates:
+
+* Frontend development with React
+* Backend API development with Node.js and Express
+* MongoDB database integration
+* JWT authentication
+* CRUD operations
+* Dashboard analytics
+* Search and filtering functionality
+* Clean UI/UX design
+
+---
+
+# Tech Stack Used
+
+## Frontend
+
+* React (Vite)
+* TypeScript
+* Tailwind CSS
+* React Router DOM
+* Axios
+* Lucide React Icons
+
+## Backend
+
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose
+* JWT Authentication
+* bcryptjs
+* dotenv
+* cors
+
+---
+
+# Features Implemented
+
+## Authentication
+
+* JWT-based login authentication
+* Protected routes
+* Persistent login using localStorage
+
+## Lead Management
+
+* Create new leads
+* View all leads
+* Edit leads
+* Delete leads
+* Update lead status
+* View lead details
+
+## Lead Notes
+
+* Add notes to leads
+* View lead-specific notes
+
+## Dashboard
+
+* Total leads
+* New leads
+* Qualified leads
+* Won leads
+* Lost leads
+* Total estimated deal value
+* Total won deal value
+
+## Search & Filtering
+
+* Filter by status
+* Filter by lead source
+* Filter by salesperson
+* Search by lead name, company, or email
+
+---
+
+# Project Structure
+
+```bash
 LeadFlow-CRM/
-  client/
-    src/
-      components/
-      hooks/
-      pages/
-      services/
-  server/
-    config/
-    controllers/
-    middleware/
-    models/
-    routes/
+│
+├── client/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── hooks/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   ├── routes/
+│   │   └── utils/
+│
+├── server/
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── utils/
+│   └── server.js
 ```
 
-## Backend Setup
+---
 
-1. Open terminal:
-   - `cd server`
-2. Install dependencies:
-   - `npm install`
-3. Create env file:
-   - copy `.env.example` to `.env`
-4. Update `.env` values:
-   - `PORT=5000`
-   - `MONGO_URI=mongodb://127.0.0.1:27017/leadflow_crm`
-   - `JWT_SECRET=your_strong_secret`
-5. Start server:
-   - `npm run dev`
+# Backend Setup
 
-Backend base URL: `http://localhost:5000/api`
+## 1. Navigate to server folder
 
-## Frontend Setup
+```bash
+cd server
+```
 
-1. Open terminal:
-   - `cd client`
-2. Install dependencies:
-   - `npm install`
-3. Create env file:
-   - copy `.env.example` to `.env`
-4. Verify env:
-   - `VITE_API_BASE_URL=http://localhost:5000/api`
-5. Start app:
-   - `npm run dev`
+## 2. Install dependencies
 
-Frontend URL: `http://localhost:5173`
+```bash
+npm install
+```
 
-## Test Login
+## 3. Create environment file
 
-- Email: `admin@example.com`
-- Password: `password123`
+Create a `.env` file inside the `server` folder.
 
-## API Endpoints
+## 4. Add environment variables
 
-### Auth
-- `POST /api/auth/login`
+```env
+PORT=5000
+MONGO_URI=mongodb://127.0.0.1:27017/leadflow_crm
+JWT_SECRET=your_super_secure_jwt_secret
+JWT_EXPIRES_IN=1d
+```
 
-### Leads
-- `POST /api/leads`
-- `GET /api/leads`
-- `GET /api/leads/:id`
-- `PUT /api/leads/:id`
-- `DELETE /api/leads/:id`
+## 5. Start backend server
 
-### Notes
-- `POST /api/notes`
-- `GET /api/notes/:leadId`
+```bash
+npm run dev
+```
 
-### Dashboard
-- `GET /api/dashboard`
+Backend Base URL:
 
-## Sample API Responses
+```bash
+http://localhost:5000/api
+```
 
-### Login success
+---
+
+# Frontend Setup
+
+## 1. Navigate to client folder
+
+```bash
+cd client
+```
+
+## 2. Install dependencies
+
+```bash
+npm install
+```
+
+## 3. Create environment file
+
+Create a `.env` file inside the `client` folder.
+
+## 4. Add frontend environment variable
+
+```env
+VITE_API_BASE_URL=http://localhost:5000/api
+```
+
+## 5. Start frontend
+
+```bash
+npm run dev
+```
+
+Frontend URL:
+
+```bash
+http://localhost:5173
+```
+
+---
+
+# Database Setup
+
+This project uses MongoDB as the primary database.
+
+## Option 1 - Local MongoDB
+
+Make sure MongoDB is installed and running locally.
+
+Default local connection:
+
+```env
+mongodb://127.0.0.1:27017/leadflow_crm
+```
+
+## Option 2 - MongoDB Atlas
+
+You may also use MongoDB Atlas by replacing the `MONGO_URI` value with your Atlas connection string.
+
+---
+
+# Test Login Credentials
+
+```txt
+Email: admin@example.com
+Password: password123
+```
+
+---
+
+# API Endpoints
+
+## Authentication
+
+### Login
+
+```http
+POST /api/auth/login
+```
+
+---
+
+## Leads
+
+### Create Lead
+
+```http
+POST /api/leads
+```
+
+### Get All Leads
+
+```http
+GET /api/leads
+```
+
+### Get Single Lead
+
+```http
+GET /api/leads/:id
+```
+
+### Update Lead
+
+```http
+PUT /api/leads/:id
+```
+
+### Delete Lead
+
+```http
+DELETE /api/leads/:id
+```
+
+---
+
+## Notes
+
+### Add Note
+
+```http
+POST /api/notes
+```
+
+### Get Notes by Lead
+
+```http
+GET /api/notes/:leadId
+```
+
+---
+
+## Dashboard
+
+### Get Dashboard Statistics
+
+```http
+GET /api/dashboard
+```
+
+---
+
+# Sample API Responses
+
+## Login Success
+
 ```json
 {
   "success": true,
@@ -89,7 +310,10 @@ Frontend URL: `http://localhost:5173`
 }
 ```
 
-### Leads list
+---
+
+## Lead Response
+
 ```json
 {
   "success": true,
@@ -112,7 +336,10 @@ Frontend URL: `http://localhost:5173`
 }
 ```
 
-### Dashboard
+---
+
+## Dashboard Response
+
 ```json
 {
   "success": true,
@@ -126,4 +353,70 @@ Frontend URL: `http://localhost:5173`
     "totalWonValue": 45000
   }
 }
+```
+
+---
+
+# Environment Variables
+
+## Backend (`server/.env`)
+
+```env
+PORT=
+MONGO_URI=
+JWT_SECRET=
+JWT_EXPIRES_IN=
+```
+
+## Frontend (`client/.env`)
+
+```env
+VITE_API_BASE_URL=
+```
+
+---
+
+# Known Limitations
+
+* Authentication currently uses a hardcoded test user.
+* No user registration functionality.
+* No email notification integration.
+* No file upload support.
+* Minimal role-based access control.
+
+---
+
+# Reflection
+
+This project helped strengthen my understanding of full-stack MERN development, JWT authentication, REST API design, MongoDB relationships, and frontend-backend integration.
+
+During development, I improved my skills in:
+
+* Building protected APIs
+* Managing application state
+* Designing reusable React components
+* Structuring scalable backend architecture
+* Implementing search and filtering features
+* Debugging authentication and API integration issues
+
+One of the most valuable learning experiences was integrating JWT authentication with protected frontend routes and ensuring secure API communication between the client and server.
+
+---
+
+# Demo Video
+
+demo video link here:
+
+```txt
+https://your-demo-video-link.com
+```
+
+---
+
+# GitHub Repository
+
+GitHub repository link here:
+
+```txt
+https://github.com/your-username/LeadFlow-CRM
 ```
