@@ -408,15 +408,20 @@ One of the most valuable learning experiences was integrating JWT authentication
 demo video link here:
 
 ```txt
-https://your-demo-video-link.com
+https://drive.google.com/file/d/1zN89hvRXPZeTDjuNbMA4oqnFKHjauOh-/view?usp=sharing
 ```
 
 ---
+
+# Deployed Application
+
+🔗 Live Demo:  
+https://lead-flow-crm-258q-p0xp1i5r8-kavindisathsaranis-projects.vercel.app
 
 # GitHub Repository
 
 GitHub repository link here:
 
 ```txt
-https://github.com/your-username/LeadFlow-CRM
+https://github.com/kavindisathsarani/LeadFlow-CRM.git
 ```
